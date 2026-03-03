@@ -22,7 +22,7 @@ resources:
 persistence:
   enabled: true
   size: 20Gi
-  storageClass: crc-csi-hostpath-provisioner
+  storageClass: ""
 
 service:
   type: ClusterIP
