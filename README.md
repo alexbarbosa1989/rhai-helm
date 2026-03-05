@@ -1,4 +1,5 @@
 ## Deploy RHAI Inference in Openshift
+**Important:** The following example is configured in an SNO OpenShift cluster. The GPU was enabled following the [How to enable NVIDIA GPU acceleration in OpenShift Local](https://developers.redhat.com/articles/2025/11/27/how-enable-nvidia-gpu-acceleration-openshift-local#) article procedure
 
 ### Export variables
 ~~~
