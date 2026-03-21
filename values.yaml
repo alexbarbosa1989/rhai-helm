@@ -8,8 +8,8 @@ image:
 model:
   hfRepo: RedHatAI/Qwen2.5-Coder-7B-Instruct-FP8-dynamic
   name: qwen-coder
-  tensor-parallel-size: 1
-  tool-call-parser: hermes
+  tensor_parallel_size: 1
+  too_call_parser: hermes
 
 resources:
   limits:
