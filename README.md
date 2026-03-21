@@ -31,13 +31,13 @@ oc get route
 Expected output:
 ~~~
 NAME         HOST/PORT                               PATH   SERVICES     PORT   TERMINATION   WILDCARD
-qwen-coder   qwen-coder-rhai-helm.apps-crc.testing          qwen-coder   8000                 None
+qwen-coder   qwen-coder-rhai-helm.<ocp-cluster-domain>          qwen-coder   8000                 None
 ~~~
 
 
 Test the model via `cURL`:
 ~~~
-curl -X POST "http://qwen-coder-rhai-helm.apps-crc.testing/v1/chat/completions"      -H "Content-Type: application/json"     --data '{
+curl -X POST "http://qwen-coder-rhai-helm.<ocp-cluster-domain>/v1/chat/completions"      -H "Content-Type: application/json"     --data '{
                 "model": "qwen-coder",
                 "messages": [
                         {
