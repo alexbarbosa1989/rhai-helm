@@ -46,9 +46,9 @@ spec:
             - --port={{ .Values.service.port }}
             - --model={{ .Values.model.hfRepo }}
             - --served-model-name={{ .Values.model.name }}
-            - --tensor-parallel-size=1
+            - --tensor-parallel-size={{ .Values.model.tensor-parallel-size }}
             - --enable-auto-tool-choice
-            - --tool-call-parser=hermes
+            - --tool-call-parser={{ .Values.model.tool-call-parser }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
