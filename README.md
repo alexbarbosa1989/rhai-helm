@@ -1,16 +1,17 @@
 ## Deploy RHAI Inference in Openshift
 **Important:** The following example is configured in an SNO OpenShift cluster. The GPU was enabled following the [How to enable NVIDIA GPU acceleration in OpenShift Local](https://developers.redhat.com/articles/2025/11/27/how-enable-nvidia-gpu-acceleration-openshift-local#) article procedure
 
+### Curren procedure is to serve VLLM with a modelcar image located in a OCI repository (default registry for current Helm chart is registry.redhat.io)
+
 ### Export variables
 ~~~
-export HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 export AUTHFILE=$XDG_RUNTIME_DIR/containers/auth.json
 export STORAGECLASS=my-storageclass
 ~~~
 
 Clone the project 
 ~~~
-git clone https://github.com/alexbarbosa1989/rhai-helm
+git clone -b modelcar https://github.com/alexbarbosa1989/rhai-helm
 ~~~
 
 Configure your own values in `rhai-helm/values.yaml`. for example, your own model, namespace, and so on.
@@ -20,7 +21,6 @@ To install the chart with the default values and provided environment variables,
 helm install rhai-helm ./rhai-helm \
 --create-namespace --namespace rhai-helm \
 --set persistence.storageClass=$STORAGECLASS \
---set secrets.hfToken=$HF_TOKEN \
 --set-file secrets.docker.dockercfg=$AUTHFILE
 ~~~
 
