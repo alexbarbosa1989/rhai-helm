@@ -30,15 +30,15 @@ oc get route
 ~~~
 Expected output:
 ~~~
-NAME         HOST/PORT                               PATH   SERVICES     PORT   TERMINATION   WILDCARD
-qwen-coder   qwen-coder-rhai-helm.<ocp-cluster-domain>          qwen-coder   8000                 None
+NAME     HOST/PORT                              PATH   SERVICES   PORT   TERMINATION   WILDCARD
+llama3   llama3-rhai-helm.<ocp-cluster-domain>         llama3     8000                 None
 ~~~
 
 
 Test the model via `cURL`:
 ~~~
-curl -X POST "http://qwen-coder-rhai-helm.<ocp-cluster-domain>/v1/chat/completions"      -H "Content-Type: application/json"     --data '{
-                "model": "qwen-coder",
+curl -X POST "http://llama3-rhai-helm.<ocp-cluster-domain>/v1/chat/completions"      -H "Content-Type: application/json"     --data '{
+                "model": "llama3",
                 "messages": [
                         {
                                 "role": "user",
@@ -49,7 +49,7 @@ curl -X POST "http://qwen-coder-rhai-helm.<ocp-cluster-domain>/v1/chat/completio
 ~~~
 Expected output:
 ~~~
-{"id":"chatcmpl-b0eb92f5dcb2c5b7","object":"chat.completion","created":1772501603,"model":"qwen-coder","choices":[{"index":0,"message":{"role":"assistant","content":"The capital of France is Paris.","refusal":null,"annotations":null,"audio":null,"function_call":null,"tool_calls":[],"reasoning":null,"reasoning_content":null},"logprobs":null,"finish_reason":"stop","stop_reason":null,"token_ids":null}],"service_tier":null,"system_fingerprint":null,"usage":{"prompt_tokens":36,"total_tokens":44,"completion_tokens":8,"prompt_tokens_details":null},"prompt_logprobs":null,"prompt_token_ids":null,"kv_transfer_params":null}
+{"id":"chatcmpl-b9f4ff297cb55182","object":"chat.completion","created":1778284716,"model":"llama3","choices":[{"index":0,"message":{"role":"assistant","content":"The capital of France is Paris.","refusal":null,"annotations":null,"audio":null,"function_call":null,"tool_calls":[],"reasoning":null,"reasoning_content":null},"logprobs":null,"finish_reason":"stop","stop_reason":null,"token_ids":null}],"service_tier":null,"system_fingerprint":null,"usage":{"prompt_tokens":42,"total_tokens":50,"completion_tokens":8,"prompt_tokens_details":null},"prompt_logprobs":null,"prompt_token_ids":null,"kv_transfer_params":null}
 ~~~
 
 
