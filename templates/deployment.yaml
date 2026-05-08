@@ -14,10 +14,10 @@ spec:
     spec:
       imagePullSecrets:
         - name: docker-secret
+      sharedProcessNamespace: true
       volumes:
         - name: model-volume
-          persistentVolumeClaim:
-            claimName: model-cache
+          emptyDir: {}
         - name: shm
           emptyDir:
             medium: Memory

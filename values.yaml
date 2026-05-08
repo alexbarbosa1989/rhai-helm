@@ -6,10 +6,11 @@ image:
   pullPolicy: IfNotPresent
 
 model:
-  hfRepo: RedHatAI/Qwen2.5-Coder-7B-Instruct-FP8-dynamic
-  name: qwen-coder
+  ociImage: "registry.redhat.io/rhelai1/modelcar-llama-3-1-8b-instruct-fp8-dynamic:1.5"
+  name: llama3
+  localPath: "/mnt/models"
   tensor_parallel_size: 1
-  too_call_parser: hermes
+  too_call_parser: llama3_json
 
 resources:
   limits:
