@@ -1,9 +1,9 @@
 ## Deploy RHAI Inference in Openshift
 **Important:** The following example is configured in an SNO OpenShift cluster. The GPU was enabled following the [How to enable NVIDIA GPU acceleration in OpenShift Local](https://developers.redhat.com/articles/2025/11/27/how-enable-nvidia-gpu-acceleration-openshift-local#) article procedure
 
-### Curren procedure is to serve VLLM with an OCI modelcar image located in a image repository (default registry for current Helm chart is registry.redhat.io).
+### Curren procedure is to serve VLLM with an OCI modelcar image located in an image repository (default registry for current Helm chart is registry.redhat.io).
 
-### To serve a model dowloaded from HuggingFace use the [main](https://github.com/alexbarbosa1989/rhai-helm/tree/main) branch
+### To serve a model dowloaded from HuggingFace, use the [main](https://github.com/alexbarbosa1989/rhai-helm/tree/main) branch
 
 ### Export variables
 ~~~
