@@ -1,9 +1,9 @@
 ## Deploy RHAI Inference in Openshift
 **Important:** The following example is configured in an SNO OpenShift cluster. The GPU was enabled following the [How to enable NVIDIA GPU acceleration in OpenShift Local](https://developers.redhat.com/articles/2025/11/27/how-enable-nvidia-gpu-acceleration-openshift-local#) article procedure
 
-### Curren procedure is to serve VLLM with a model downloaded from HuggingFae
+### Curren procedure is to serve VLLM with a model downloaded from HuggingFace
 
-### To serve a model an OCI modelcar image located in a image repository use [modelcar](https://github.com/alexbarbosa1989/rhai-helm/tree/modelcar) branch
+### To serve a model with an OCI modelcar image located in an image repository, use [modelcar](https://github.com/alexbarbosa1989/rhai-helm/tree/modelcar) branch
 
 ### Export variables
 ~~~
@@ -34,8 +34,8 @@ oc get route
 ~~~
 Expected output:
 ~~~
-NAME         HOST/PORT                               PATH   SERVICES     PORT   TERMINATION   WILDCARD
-qwen-coder   qwen-coder-rhai-helm.<ocp-cluster-domain>      qwen-coder   8000                 None
+NAME         HOST/PORT                                 PATH   SERVICES     PORT   TERMINATION   WILDCARD
+qwen-coder   qwen-coder-rhai-helm.<ocp-cluster-domain>        qwen-coder   8000                 None
 ~~~
 
 
