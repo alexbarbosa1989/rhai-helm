@@ -6,6 +6,15 @@ image:
   pullPolicy: IfNotPresent
 
 model:
+  # source controls how the model is fetched: "huggingface" (download at
+  # startup, cached on a PVC) or "oci" (pulled as a modelcar init container
+  # image from a container registry, no PVC needed).
+  source: huggingface
+
+  # Used when source: huggingface
+  hfRepo: RedHatAI/Qwen2.5-Coder-7B-Instruct-FP8-dynamic
+
+  # Used when source: oci
   ociImage: "registry.redhat.io/rhelai1/modelcar-llama-3-1-8b-instruct-fp8-dynamic:1.5"
   name: llama3
   tensor_parallel_size: 1
