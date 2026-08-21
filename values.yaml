@@ -9,7 +9,7 @@ model:
   # source controls how the model is fetched: "huggingface" (download at
   # startup, cached on a PVC) or "oci" (pulled as a modelcar init container
   # image from a container registry, no PVC needed).
-  source: huggingface
+  source: oci
 
   # Used when source: huggingface
   hfRepo: RedHatAI/Qwen2.5-Coder-7B-Instruct-FP8-dynamic
